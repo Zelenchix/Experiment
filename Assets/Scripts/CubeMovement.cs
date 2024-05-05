@@ -4,48 +4,29 @@ using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
 {
-    public bool left = false;
-    public bool right = false;
-    public bool forward = false;
-    public bool back = false;
+    private float moveSpeed = 100f;
+    private float moveHorizontal;
+    private float moveVertical;
+    private Rigidbody rb;
+    
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
-        if (Input.GetKey("a"))
-        {
-            left = true;
-        }
-        else
-        {
-            left = false;
-        }
-
-        if (Input.GetKey("d"))
-        {
-            right = true;
-        }
-        else
-        {
-            right = false;
-        }
-
-        if (Input.GetKey("w"))
-        {
-            forward = true;
-        }
-        else
-        {
-            forward = false;
-        }
-
-        if (Input.GetKey("s"))
-        {
-            back = true;
-        }
-        else
-        {
-            back = false;
-        }
-        
+        moveHorizontal = Input.GetAxis("Horizontal");
+        moveVertical = Input.GetAxis("Vertical");
     }
+
+    void FixedUpdate()
+     {
+         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+         rb.AddForce(movement * moveSpeed);
+         // Debug.Log("movement" + movement);
+         // Debug.Log("movementSpeed" + moveSpeed);
+         // Debug.Log("moveHorizontal" + moveHorizontal);
+         // Debug.Log("moveVertical" + moveVertical);
+     }
 }
