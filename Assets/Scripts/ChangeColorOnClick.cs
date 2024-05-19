@@ -17,10 +17,6 @@ public class ChangeColorOnClick : MonoBehaviour
       
       rn.material.color = randomColor;
    }
-
-   private void OnClick()
-   {
-      
-   }
+   
    
 }
