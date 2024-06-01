@@ -10,8 +10,8 @@ public class CubeMovementWithoutRigidBody : MonoBehaviour
     
     void Update()
     {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal AD");
+        moveVertical = Input.GetAxis("Vertical WS");
 
     }
 

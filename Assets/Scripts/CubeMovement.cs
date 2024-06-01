@@ -16,8 +16,8 @@ public class CubeMovement : MonoBehaviour
 
     void Update()
     {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal LR");
+        moveVertical = Input.GetAxis("Vertical UD");
     }
 
     void FixedUpdate()
